@@ -25,7 +25,9 @@ exports.show = function(req, res){
 */
 exports.create = function(req, res){
 	var save_disbursement_maintenance = new disbursement_maintenance(req.body);
-		save_disbursement_maintenance.save(function(err, disbursement_maintenance_entry) {
+	// save disbursement maintenance entry in disbursement maintenance collection
+	save_disbursement_maintenance.save(function(err, disbursement_maintenance_entry) {
+		// return validation error else return 201 created response
 		return err ? validationError(res, err) : res.json(201); // 201 Created
 	});
 }
