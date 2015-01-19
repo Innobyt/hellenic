@@ -8,8 +8,11 @@ var disbursement_maintenance = require('./disbursement_maintenance.model');
 exports.index = function(req, res){
 	// returns all documents from a collection and returns all fields for the documents.
     disbursement_maintenance.find(function(err, collection_disbursement_maintenance){
-    	// return error else return json collection_disbursement_maintenance
-        return err ? handleError(res, err) : res.json(collection_disbursement_maintenance);
+		// a generic error message, given when an unexpected condition was enco
+		// untered and no more specific message is suitable.
+    	if(err) return handleError(res, err);
+    	// return document found
+        res.json(collection_disbursement_maintenance);
     });
 }
 
@@ -17,11 +20,18 @@ exports.index = function(req, res){
  * Get disbursement maintenance entry
  */
 exports.show = function(req, res){
+	// get params id
 	var queryid = req.params.id;
-    disbursement_maintenance.findById(queryid, function(err, doc){
+	// finds a single document by id
+    disbursement_maintenance.findById(queryid, function(err, found){
+		// a generic error message, given when an unexpected condition was enco
+		// untered and no more specific message is suitable.
         if (err) return handleError(res, err);
-        if (!doc) return http_error_notfound(res, err);
-        res.json(doc);
+		// the server cannot or will not process the request due to something t
+		// hat is perceived to be a client error.
+        if (!found) return http_error_badrequest(res, err);
+        // return document found
+        res.json(found);
     });
 }
 
@@ -31,9 +41,13 @@ exports.show = function(req, res){
 exports.create = function(req, res){
 	var save_disbursement_maintenance = new disbursement_maintenance(req.body);
 	// save disbursement maintenance entry in disbursement maintenance collection
-	save_disbursement_maintenance.save(function(err, disbursement_maintenance_entry) {
-		// return validation error else return 201 created response
-		return err ? validationError(res, err) : res.json(201); // 201 Created
+	save_disbursement_maintenance.save(function(err) {
+		// the request was well-formed but was unable to be followed due to sem
+		// antic errors.
+		if(err) return validationError(res, err);
+		// the request has been fulfilled and resulted in a new resource being 
+		// created.
+		res.json(201);
 	});
 }
 
@@ -41,17 +55,16 @@ exports.create = function(req, res){
  * Update disbursement maintenance document 
  */
 exports.update = function(req, res){
-	
 	// get document disbursement maintenance document id
 	var id = req.params.id;
-
 	// get document disbursement maintenance document id update fields
 	var update = req.body;
-
 	// update disbursement maintenance collection document of id query, with update properties of update
 	disbursement_maintenance.findByIdAndUpdate(id, update, function(err, numberAffected, raw){
-		if(err) return handleError(res, err);
-		if(!numberAffected) return http_error_badrequest(res, err);
+		// the request was well-formed but was unable to be followed due to sem
+		// antic errors.
+		if(err) return validationError(res, err);
+		// standard response for successful HTTP requests.
 		res.json(200);
 	});
 }
@@ -60,9 +73,16 @@ exports.update = function(req, res){
  * Deletes disbursement maintenance entry
  */
 exports.destroy = function(req, res){
-  disbursement_maintenance.findByIdAndRemove(req.params.id, function(err, doc) {
-	return err ? handleError(res, err) : res.json(204); // 204 No Content - response to a successful delete request
-  });
+	// get document disbursement maintenance document id
+	var id = req.params.id;
+	// finds a matching document, removes it, passing the found document (if any) to the callback.
+	disbursement_maintenance.findByIdAndRemove(id, function(err, found) {
+		// a generic error message, given when an unexpected condition was enco
+		// untered and no more specific message is suitable.
+		if(err) return handleError(res, err);
+		// 204 No Content - response to a successful delete request
+		res.json(204); 
+	});
 }
 
 /**
@@ -76,6 +96,8 @@ function handleError(res, err) {
 
 /**
  * 422 Unprocessable Entity
+ * The request was well-formed but was unable to be followed due to semantic er
+ * rors.
  */
 function validationError(res, err) {
   return res.json(422, err);
