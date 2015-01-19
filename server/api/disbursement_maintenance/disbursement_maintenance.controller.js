@@ -49,7 +49,7 @@ exports.update = function(req, res){
 	var update = req.body;
 
 	// update disbursement maintenance collection document of id query, with update properties of update
-	disbursement_maintenance.Model.findByIdAndUpdate(id, update, function(err, numberAffected, raw){
+	disbursement_maintenance.findByIdAndUpdate(id, update, function(err, numberAffected, raw){
 		if(err) return handleError(res, err);
 		if(!numberAffected) return http_error_badrequest(res, err);
 		res.json(200);
