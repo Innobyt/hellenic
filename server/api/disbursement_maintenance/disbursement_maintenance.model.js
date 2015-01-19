@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var disbursement_maintenance = new Schema({
-    created         : Date.now,
+    created         : String,
     user            : String,
     arvd            : String,
     t_date          : String,
