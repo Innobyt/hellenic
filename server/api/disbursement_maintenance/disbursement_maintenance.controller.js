@@ -18,6 +18,12 @@ exports.index = function(req, res){
  */
 exports.show = function(req, res){
 
+	var disbursement_maintenance_id = req.params.id;
+    disbursement_maintenance.findById(disbursement_maintenance_id, function(err, disbursement_maintenance_document){
+        if (err) return handleError(res, err);
+        if (!user) return http_error_notfound(res, err);
+        res.json(disbursement_maintenance_document);
+    });
 }
 
 /**
@@ -30,13 +36,6 @@ exports.create = function(req, res){
 		// return validation error else return 201 created response
 		return err ? validationError(res, err) : res.json(201); // 201 Created
 	});
-}
-
-/**
- * 
- */
-exports.update = function(req, res){
-
 }
 
 /**
@@ -67,4 +66,13 @@ function handleError(res, err) {
  */
 function validationError(res, err) {
   return res.json(422, err);
+};
+
+/**
+ * 404 Not Found
+ * The requested resource could not be found but may be available again in the 
+ * future. Subsequent requests by the client are permissible.
+ */
+function http_error_notfound(res, err) {
+  return res.json(401, err);
 };
