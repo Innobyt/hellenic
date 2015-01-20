@@ -7,7 +7,7 @@ var mongoose = require('mongoose'),
  * VesselTableSchema Schema
  */
 var vesseltable = new Schema({
-    created         : Date.now,
+    created         : String,
     user            : String,
     number    		: String,
     name      		: String,
