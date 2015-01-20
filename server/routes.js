@@ -17,6 +17,7 @@ module.exports = function(app) {
   app.use('/api/generatecreditdebitnote', require('./api/generatecreditdebitnote'));
   app.use('/api/normalbillingmaintenance', require('./api/normalbillingmaintenance'));
   app.use('/api/disbursement_maintenance', require('./api/disbursement_maintenance'));
+  app.use('/api/generatedisbursementaccount', require('./api/generatedisbursementaccount'));
 
   app.use('/auth', require('./auth'));
   
