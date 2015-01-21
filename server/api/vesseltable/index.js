@@ -1,7 +1,7 @@
 'use strict';
 
 var express = require('express');
-var controller = require('./disbursement_maintenance.controller');
+var controller = require('./vesseltable.controller');
 
 var router = express.Router();
 
