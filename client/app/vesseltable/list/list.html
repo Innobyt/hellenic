@@ -1,0 +1,44 @@
+<div ng-include="'../components/navbar/navbar.html'"></div>
+<header class="hero-unit" id="banner">
+	<div class="container">
+		<h1>Vessel Table</h1>
+	</div>
+</header>
+<div class="container">
+	<a class="btn btn-primary" ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv">Export to CSV</a>
+	<button ng-click="tableParams.sorting({})" class="btn btn-default pull-right">Clear sorting</button>
+	<button ng-click="tableParams.filter({})" class="btn btn-default pull-right">Clear filter</button>
+	<table ng-table="tableParams" show-filter="true" class="table" export-csv="csv">
+		<tr ng-repeat="vessel in $data">
+			<td data-title="'created'" sortable="'created'" filter="{ 'created': 'text' }">
+				{{vessel.created}}
+			</td>
+			<td data-title="'user'" sortable="'user'" filter="{ 'user': 'text' }">
+				{{vessel.user}}
+			</td>
+			<td data-title="'number'" sortable="'number'" filter="{ 'number': 'text' }">
+				{{vessel.number}}
+			</td>
+			<td data-title="'name'" sortable="'name'" filter="{ 'name': 'text' }">
+				{{vessel.name}}
+			</td>
+			<td data-title="'hide'" sortable="'hide'" filter="{ 'hide': 'text' }">
+				{{vessel.hide}}
+			</td>
+			<td data-title="'approval'" sortable="'approval'" filter="{ 'approval': 'text' }">
+				{{vessel.approval}}
+			</td>
+			<td data-title="'View'">
+				<a class="btn btn-primary" href="/vesseltable/query/{{vessel._id}}">View</a>
+			</td>
+			<td data-title="'Update'">
+				<a class="btn btn-primary" href="/vesseltable/update/{{vessel._id}}">Update</a>
+			</td> 
+		</tr>
+	</table>
+</div>
+<footer class="footer">
+  <div class="container">
+      <p><a href="http://innobyt.com">Innobyt Hellenic Web Application</a></p>
+  </div>
+</footer>
