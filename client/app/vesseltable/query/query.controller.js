@@ -2,11 +2,11 @@
 	'use strict';
 
 	angular.module('hellenicApp')
-	  .controller('QueryCtrl', QueryCtrl);
+	  .controller('vesseltableQueryCtrl', vesseltableQueryCtrl);
 
-	QueryCtrl.$inject=['$scope', '$filter', '$stateParams', 'ngTableParams', 'vesseltable'];
+	vesseltableQueryCtrl.$inject=['$scope', '$filter', '$stateParams', 'ngTableParams', 'vesseltable'];
 
-	function QueryCtrl($scope, $filter, $stateParams, ngTableParams, vesseltable) {
+	function vesseltableQueryCtrl($scope, $filter, $stateParams, ngTableParams, vesseltable) {
 		/*jshint validthis: true */
 
 		// get a vesseltable object from the factory

@@ -1,16 +1,16 @@
 'use strict';
 
-describe('Controller: CreateCtrl', function () {
+describe('Controller: vesseltableCreateCtrl', function () {
 
   // load the controller's module
   beforeEach(module('hellenicApp'));
 
-  var CreateCtrl, scope;
+  var vesseltableCreateCtrl, scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    CreateCtrl = $controller('CreateCtrl', {
+    vesseltableCreateCtrl = $controller('vesseltableCreateCtrl', {
       $scope: scope
     });
   }));

@@ -6,25 +6,25 @@ angular.module('hellenicApp')
 	.state('create_vesseltable', {
         url: '/vesseltable/create',
         templateUrl: 'app/vesseltable/create/create.html',
-        controller: 'CreateCtrl',
+        controller: 'vesseltableCreateCtrl',
         authenticate: true
       })
     .state('list_vesseltable', {
         url: '/vesseltable/list',
         templateUrl: 'app/vesseltable/list/list.html',
-        controller: 'ListCtrl',
+        controller: 'vesseltableListCtrl',
         authenticate: true
       })
     .state('query_vesseltable', {
         url: '/vesseltable/query/:id',
         templateUrl: 'app/vesseltable/query/query.html',
-        controller: 'QueryCtrl',
+        controller: 'vesseltableQueryCtrl',
         authenticate: true
       })
       .state('update_vesseltable', {
         url: '/vesseltable/update/:id',
         templateUrl: 'app/vesseltable/update/update.html',
-        controller: 'UpdateCtrl',
+        controller: 'vesseltableUpdateCtrl',
         authenticate: true
       });
   });

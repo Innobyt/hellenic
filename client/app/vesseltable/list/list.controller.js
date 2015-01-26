@@ -3,11 +3,11 @@
 	'use strict';
 	
 	angular.module('hellenicApp')
-	  .controller('ListCtrl', ListCtrl);
+	  .controller('vesseltableListCtrl', vesseltableListCtrl);
 
-	ListCtrl.$inject=['$scope', '$filter', 'ngTableParams', 'vesseltable'];
+	vesseltableListCtrl.$inject=['$scope', '$filter', 'ngTableParams', 'vesseltable'];
 	
-	function ListCtrl($scope, $filter, ngTableParams, vesseltable) {
+	function vesseltableListCtrl($scope, $filter, ngTableParams, vesseltable) {
 		
 		// get a vesseltable collection from the factory
 		var data = $scope.list = vesseltable.view();

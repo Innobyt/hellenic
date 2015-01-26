@@ -2,11 +2,11 @@
 	'use strict';
 
 	angular.module('hellenicApp')
-	  .controller('CreateCtrl', CreateCtrl);
+	  .controller('vesseltableCreateCtrl', vesseltableCreateCtrl);
 	
-	CreateCtrl.$inject=['$scope', 'vesseltable'];
+	vesseltableCreateCtrl.$inject=['$scope', 'vesseltable'];
 
-	function CreateCtrl($scope, vesseltable) {
+	function vesseltableCreateCtrl($scope, vesseltable) {
 
 		// initialize create controller
 		$scope.initialize = function(){

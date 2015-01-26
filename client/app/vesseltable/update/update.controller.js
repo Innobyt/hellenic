@@ -2,11 +2,11 @@
 	'use strict';
 
 	angular.module('hellenicApp')
-	  .controller('UpdateCtrl', UpdateCtrl);
+	  .controller('vesseltableUpdateCtrl', vesseltableUpdateCtrl);
 	
-	UpdateCtrl.$inject=['$scope', '$stateParams', 'vesseltable'];
+	vesseltableUpdateCtrl.$inject=['$scope', '$stateParams', 'vesseltable'];
 
-	function UpdateCtrl($scope, $stateParams, vesseltable) {
+	function vesseltableUpdateCtrl($scope, $stateParams, vesseltable) {
 
 		// get a vesseltable object from the factory
 		$scope.vessel = vesseltable.query({ id: $stateParams.id }, function(){
