@@ -1,0 +1,117 @@
+<div ng-include="'../components/navbar/navbar.html'"></div>
+<header class="hero-unit" id="banner">
+	<div class="container">
+		<h1>Disbursement Maintenance Create</h1>
+	</div>
+</header>
+<div class="container">
+	<form>
+		
+		<div class="form-group">
+			<label>arvd</label>
+			<input input type="text" id="arvd" class="form-control" placeholder="Enter arvd Here" ng-model="formData.arvd">
+		</div>
+
+		<div class="form-group">
+			<label>t_date</label>
+			<input input type="text" id="t_date" class="form-control" placeholder="Enter t_date Here" ng-model="formData.t_date">
+		</div>
+
+		<div class="form-group">
+			<label>cd_type</label>
+			<input input type="text" id="cd_type" class="form-control" placeholder="Enter cd_type Here" ng-model="formData.cd_type">
+		</div>
+
+		<div class="form-group">
+			<label>invoice_no</label>
+			<input input type="text" id="invoice_no" class="form-control" placeholder="Enter invoice_no Here" ng-model="formData.invoice_no">
+		</div>
+
+		<div class="form-group">
+			<label>vendor_acno</label>
+			<input input type="text" id="vendor_acno" class="form-control" placeholder="Enter vendor_acno Here" ng-model="formData.vendor_acno">
+		</div>
+
+		<div class="form-group">
+			<label>invoice_date</label>
+			<input input type="text" id="invoice_date" class="form-control" placeholder="Enter invoice_date Here" ng-model="formData.invoice_date">
+		</div>
+
+		<div>
+			<label>expense_accode</label>
+			<div>
+				<select class="form-control" ng-model="formData.expense_accode" ng-options="expense.accode as expense.accode for expense in expenses"></select>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label>desc</label>
+			<input input type="text" id="desc" class="form-control" placeholder="Enter desc Here" ng-model="formData.desc">
+		</div>
+
+		<div class="form-group">
+			<label>cost</label>
+			<input input type="text" id="cost" class="form-control" placeholder="Enter cost Here" ng-model="formData.cost">
+		</div>
+
+		<div class="form-group">
+			<label>billing</label>
+			<input input type="text" id="billing" class="form-control" placeholder="Enter billing Here" ng-model="formData.billing">
+		</div>
+
+		<div class="form-group">
+			<label>gst</label>
+			<input input type="text" id="gst" class="form-control" placeholder="Enter gst Here" ng-model="formData.gst">
+		</div>
+
+		<div class="form-group">
+			<label>gst_percentage</label>
+			<input input type="text" id="gst_percentage" class="form-control" placeholder="Enter gst_percentage Here" ng-model="formData.gst_percentage">
+		</div>
+
+		<div class="form-group">
+			<label>remarks</label>
+			<input input type="text" id="remarks" class="form-control" placeholder="Enter remarks Here" ng-model="formData.remarks">
+		</div>
+
+		<div>
+			<label>vessel_name</label>
+			<div>
+				<select class="form-control" ng-model="formData.vessel_name" ng-options="vessel.name as vessel.name for vessel in vessels"></select>
+			</div>
+		</div>
+
+		<div>
+			<label>vessel_number</label>
+			<div>
+				<select class="form-control" ng-model="formData.vessel_number" ng-options="vessel.number as vessel.number for vessel in vessels"></select>
+			</div>
+		</div>
+
+		<div>
+			<label>customer_number</label>
+			<div>
+				<select class="form-control" ng-model="formData.customer_number" ng-options="customer.number as customer.number for customer in customers"></select>
+			</div>
+		</div>
+
+		<div>
+			<label>customer_name</label>
+			<div>
+				<select class="form-control" ng-model="formData.customer_name" ng-options="customer.name as customer.name for customer in customers"></select>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label>drcr_number</label>
+			<input input type="text" id="drcr_number" class="form-control" placeholder="Enter drcr_number Here" ng-model="formData.drcr_number">
+		</div>
+
+		<button type="submit" class="btn btn-primary" ng-click="submit()">Add</button>
+	</form>
+</div>
+<footer class="footer">
+  <div class="container">
+      <p><a href="http://innobyt.com">Innobyt Hellenic Web Application</a></p>
+  </div>
+</footer>
