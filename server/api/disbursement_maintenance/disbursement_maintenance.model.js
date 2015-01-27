@@ -25,7 +25,9 @@ var disbursement_maintenance = new Schema({
     customer_name   : String,
     drcr_number     : String,
     hide            : String,
-    approve        	: String
+    status        	: String,
+    generated       : String
+
 });
 
 module.exports = mongoose.model('disbursement_maintenance', disbursement_maintenance);
