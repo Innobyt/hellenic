@@ -1,0 +1,78 @@
+<div ng-include="'../components/navbar/navbar.html'"></div>
+<header class="hero-unit" id="banner">
+	<div class="container">
+		<h1>Normal Billing Maintenance</h1>
+	</div>
+</header>
+<div class="container">
+	<a class="btn btn-primary" ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv">Export to CSV</a>
+	<button ng-click="tableParams.sorting({})" class="btn btn-default pull-right">Clear sorting</button>
+	<button ng-click="tableParams.filter({})" class="btn btn-default pull-right">Clear filter</button>
+	<table ng-table="tableParams" show-filter="true" class="table" export-csv="csv">
+		<tr ng-repeat="normalbilling in $data">
+			<td data-title="'created'" sortable="'created'" filter="{ 'created': 'text' }">
+				{{normalbilling.created}}
+			</td>
+			<td data-title="'user'" sortable="'user'" filter="{ 'user': 'text' }">
+				{{normalbilling.user}}
+			</td>
+			<td data-title="'cdtype'" sortable="'cdtype'" filter="{ 'cdtype': 'text' }">
+				{{normalbilling.cdtype}}
+			</td>
+			<td data-title="'arvd'" sortable="'arvd'" filter="{ 'arvd': 'text' }">
+				{{normalbilling.arvd}}
+			</td>
+			<td data-title="'tdate'" sortable="'tdate'" filter="{ 'tdate': 'text' }">
+				{{normalbilling.tdate}}
+			</td>
+			<td data-title="'expenseaccode'" sortable="'expenseaccode'" filter="{ 'expenseaccode': 'text' }">
+				{{normalbilling.expenseaccode}}
+			</td>
+			<td data-title="'desc'" sortable="'desc'" filter="{ 'desc': 'text' }">
+				{{normalbilling.desc}}
+			</td>
+			<td data-title="'billing'" sortable="'billing'" filter="{ 'billing': 'text' }">
+				{{normalbilling.billing}}
+			</td>
+			<td data-title="'gstyn'" sortable="'gstyn'" filter="{ 'gstyn': 'text' }">
+				{{normalbilling.gstyn}}
+			</td>
+			<td data-title="'gstpercentage'" sortable="'gstpercentage'" filter="{ 'gstpercentage': 'text' }">
+				{{normalbilling.gstpercentage}}
+			</td>
+			<td data-title="'remarks'" sortable="'remarks'" filter="{ 'remarks': 'text' }">
+				{{normalbilling.remarks}}
+			</td>
+			<td data-title="'vessel_number'" sortable="'vessel_number'" filter="{ 'vessel_number': 'text' }">
+				{{normalbilling.vessel_number}}
+			</td>
+			<td data-title="'vessel_name'" sortable="'vessel_name'" filter="{ 'vessel_name': 'text' }">
+				{{normalbilling.vessel_name}}
+			</td>
+			<td data-title="'customer_number'" sortable="'customer_number'" filter="{ 'customer_number': 'text' }">
+				{{normalbilling.customer_number}}
+			</td>
+			<td data-title="'customer_name'" sortable="'customer_name'" filter="{ 'customer_name': 'text' }">
+				{{normalbilling.customer_name}}
+			</td>
+			<td data-title="'dr_cr_note_number'" sortable="'dr_cr_note_number'" filter="{ 'dr_cr_note_number': 'text' }">
+				{{normalbilling.dr_cr_note_number}}
+			</td>
+			<td data-title="'hide'" sortable="'hide'" filter="{ 'hide': 'text' }">
+				{{normalbilling.hide}}
+			</td>
+
+			<td data-title="'View'">
+				<a class="btn btn-primary" href="/normalbillingmaintenance/query/{{normalbilling._id}}">View</a>
+			</td>
+			<td data-title="'Update'">
+				<a class="btn btn-primary" href="/normalbillingmaintenance/update/{{normalbilling._id}}">Update</a>
+			</td> 
+		</tr>
+	</table>
+</div>
+<footer class="footer">
+  <div class="container">
+      <p><a href="http://innobyt.com">Innobyt Hellenic Web Application</a></p>
+  </div>
+</footer>
