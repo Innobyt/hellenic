@@ -1,0 +1,56 @@
+<div ng-include="'../components/navbar/navbar.html'"></div>
+<header class="hero-unit" id="banner">
+	<div class="container">
+		<h1>Generate Debit Note Update</h1>
+	</div>
+</header>
+<div class="container">
+	<form>
+		<div class="form-group">
+			<label>created</label>
+			<input type="text" id="created" class="form-control" placeholder="created" ng-model="formData.created">
+		</div>
+		<div class="form-group">
+			<label>user</label>
+			<input type="text" id="user" class="form-control" placeholder="user" ng-model="formData.user">
+		</div>
+		<div>
+			<label>vessel_number</label>
+			<div>
+				<select class="form-control" ng-model="formData.vessel_number" ng-options="vessel.number as vessel.number for vessel in vessels"></select>
+			</div>
+		</div>
+		<div>
+			<label>customer_number</label>
+			<div>
+				<select class="form-control" ng-model="formData.customer_number" ng-options="customer.number as customer.number for customer in customers"></select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label>arvd</label>
+			<input type="text" id="arvd" class="form-control" placeholder="arvd" ng-model="formData.arvd">
+		</div>
+		<div class="form-group">
+			<label>print_date</label>
+			<input type="text" id="print_date" class="form-control" placeholder="print_date" ng-model="formData.print_date">
+		</div>
+		<div class="form-group">
+			<label>cdnote_no</label>
+			<input type="text" id="cdnote_no" class="form-control" placeholder="cdnote_no" ng-model="formData.cdnote_no">
+		</div>
+		<div class="form-group">
+			<label>hide</label>
+			<input type="text" id="hide" class="form-control" placeholder="hide" ng-model="formData.hide">
+		</div>
+		<div class="form-group">
+			<label>approval</label>
+			<input type="text" id="approval" class="form-control" placeholder="approval" ng-model="formData.approval">
+		</div>
+		<button type="submit" class="btn btn-primary" ng-click="submit()">Add</button>
+	</form>
+</div>
+<footer class="footer">
+  <div class="container">
+      <p><a href="http://innobyt.com">Innobyt Hellenic Web Application</a></p>
+  </div>
+</footer>
