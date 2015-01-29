@@ -1,0 +1,66 @@
+<div ng-include="'../components/navbar/navbar.html'"></div>
+<header class="hero-unit" id="banner">
+	<div class="container">
+		<h1>Generate Credit Note Create</h1>
+	</div>
+</header>
+<div class="container">
+	<form>
+	
+		<div class="form-group">
+			<label>created</label>
+			<input input type="text" id="created" class="form-control" placeholder="Enter created Here" ng-model="formData.created">
+		</div>
+
+		<div class="form-group">
+			<label>user</label>
+			<input input type="text" id="user" class="form-control" placeholder="Enter user Here" ng-model="formData.user">
+		</div>
+
+		<div>
+			<label>vessel_number</label>
+			<div>
+				<select class="form-control" ng-model="formData.vessel_number" ng-options="vessel.number as vessel.number for vessel in vessels"></select>
+			</div>
+		</div>
+
+		<div>
+			<label>customer_number</label>
+			<div>
+				<select class="form-control" ng-model="formData.customer_number" ng-options="customer.number as customer.number for customer in customers"></select>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label>arvd</label>
+			<input input type="text" id="arvd" class="form-control" placeholder="Enter arvd Here" ng-model="formData.arvd">
+		</div>
+
+		<div class="form-group">
+			<label>print_date</label>
+			<input input type="text" id="print_date" class="form-control" placeholder="Enter print_date Here" ng-model="formData.print_date">
+		</div>
+
+		<div class="form-group">
+			<label>cdnote_no</label>
+			<input input type="text" id="cdnote_no" class="form-control" placeholder="Enter cdnote_no Here" ng-model="formData.cdnote_no">
+		</div>
+
+		<div class="form-group">
+			<label>hide</label>
+			<input input type="text" id="hide" class="form-control" placeholder="Enter hide Here" ng-model="formData.hide">
+		</div>
+
+		<div class="form-group">
+			<label>approval</label>
+			<input input type="text" id="approval" class="form-control" placeholder="Enter approval Here" ng-model="formData.approval">
+		</div>
+
+		<button type="submit" class="btn btn-primary" ng-click="submit()">Add</button>
+	</form>
+</div>
+<footer class="footer">
+  <div class="container">
+      <p><a href="http://innobyt.com">Innobyt Hellenic Web Application</a></p>
+  </div>
+</footer>
