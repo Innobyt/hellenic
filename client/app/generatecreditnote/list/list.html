@@ -1,0 +1,53 @@
+<div ng-include="'../components/navbar/navbar.html'"></div>
+<header class="hero-unit" id="banner">
+	<div class="container">
+		<h1>Generate Credit Note</h1>
+	</div>
+</header>
+<div class="container">
+	<a class="btn btn-primary" ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv">Export to CSV</a>
+	<button ng-click="tableParams.sorting({})" class="btn btn-default pull-right">Clear sorting</button>
+	<button ng-click="tableParams.filter({})" class="btn btn-default pull-right">Clear filter</button>
+	<table ng-table="tableParams" show-filter="true" class="table" export-csv="csv">
+		<tr ng-repeat="generatecreditnote in $data">
+			<td data-title="'created'" sortable="'created'" filter="{ 'created': 'text' }">
+				{{generatecreditnote.created}}
+			</td>
+			<td data-title="'user'" sortable="'user'" filter="{ 'user': 'text' }">
+				{{generatecreditnote.user}}
+			</td>
+			<td data-title="'vessel_number'" sortable="'vessel_number'" filter="{ 'vessel_number': 'text' }">
+				{{generatecreditnote.vessel_number}}
+			</td>
+			<td data-title="'customer_number'" sortable="'customer_number'" filter="{ 'customer_number': 'text' }">
+				{{generatecreditnote.customer_number}}
+			</td>
+			<td data-title="'arvd'" sortable="'arvd'" filter="{ 'arvd': 'text' }">
+				{{generatecreditnote.arvd}}
+			</td>
+			<td data-title="'print_date'" sortable="'print_date'" filter="{ 'print_date': 'text' }">
+				{{generatecreditnote.print_date}}
+			</td>
+			<td data-title="'cdnote_no'" sortable="'cdnote_no'" filter="{ 'cdnote_no': 'text' }">
+				{{generatecreditnote.cdnote_no}}
+			</td>
+			<td data-title="'hide'" sortable="'hide'" filter="{ 'hide': 'text' }">
+				{{generatecreditnote.hide}}
+			</td>
+			<td data-title="'approval'" sortable="'approval'" filter="{ 'approval': 'text' }">
+				{{generatecreditnote.approval}}
+			</td>
+    			<td data-title="'View'">
+				<a class="btn btn-primary" href="/generatecreditnote/query/{{generatecreditnote._id}}">View</a>
+			</td>
+			<td data-title="'Update'">
+				<a class="btn btn-primary" href="/generatecreditnote/update/{{generatecreditnote._id}}">Update</a>
+			</td> 
+		</tr>
+	</table>
+</div>
+<footer class="footer">
+  <div class="container">
+      <p><a href="http://innobyt.com">Innobyt Hellenic Web Application</a></p>
+  </div>
+</footer>
