@@ -1,0 +1,56 @@
+<div ng-include="'../components/navbar/navbar.html'"></div>
+<header class="hero-unit" id="banner">
+	<div class="container">
+		<h1>Generate Disbursement Account</h1>
+	</div>
+</header>
+<div class="container">
+	<a class="btn btn-primary" ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv">Export to CSV</a>
+	<button ng-click="tableParams.sorting({})" class="btn btn-default pull-right">Clear sorting</button>
+	<button ng-click="tableParams.filter({})" class="btn btn-default pull-right">Clear filter</button>
+	<table ng-table="tableParams" show-filter="true" class="table" export-csv="csv">
+		<tr ng-repeat="generatedisbursementaccount in $data">
+			<td data-title="'created'" sortable="'created'" filter="{ 'created': 'text' }">
+				{{generatedisbursementaccount.created}}
+			</td>
+			<td data-title="'user'" sortable="'user'" filter="{ 'user': 'text' }">
+				{{generatedisbursementaccount.user}}
+			</td>
+			<td data-title="'vessel_no'" sortable="'vessel_no'" filter="{ 'vessel_no': 'text' }">
+				{{generatedisbursementaccount.vessel_no}}
+			</td>
+			<td data-title="'customer_no'" sortable="'customer_no'" filter="{ 'customer_no': 'text' }">
+				{{generatedisbursementaccount.customer_no}}
+			</td>
+			<td data-title="'arvd'" sortable="'arvd'" filter="{ 'arvd': 'text' }">
+				{{generatedisbursementaccount.arvd}}
+			</td>
+			<td data-title="'disb_no'" sortable="'disb_no'" filter="{ 'disb_no': 'text' }">
+				{{generatedisbursementaccount.disb_no}}
+			</td>
+			<td data-title="'disb_date'" sortable="'disb_date'" filter="{ 'disb_date': 'text' }">
+				{{generatedisbursementaccount.disb_date}}
+			</td>
+			<td data-title="'sailed_date'" sortable="'sailed_date'" filter="{ 'sailed_date': 'text' }">
+				{{generatedisbursementaccount.sailed_date}}
+			</td>
+			<td data-title="'hide'" sortable="'hide'" filter="{ 'hide': 'text' }">
+				{{generatedisbursementaccount.hide}}
+			</td>
+			<td data-title="'approval'" sortable="'approval'" filter="{ 'approval': 'text' }">
+				{{generatedisbursementaccount.approval}}
+			</td>
+			<td data-title="'View'">
+				<a class="btn btn-primary" href="/generatedisbursementaccount/query/{{generatedisbursementaccount._id}}">View</a>
+			</td>
+			<td data-title="'Update'">
+				<a class="btn btn-primary" href="/generatedisbursementaccount/update/{{generatedisbursementaccount._id}}">Update</a>
+			</td> 
+		</tr>
+	</table>
+</div>
+<footer class="footer">
+  <div class="container">
+      <p><a href="http://innobyt.com">Innobyt Hellenic Web Application</a></p>
+  </div>
+</footer>

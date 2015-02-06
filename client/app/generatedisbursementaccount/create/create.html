@@ -1,0 +1,67 @@
+<div ng-include="'../components/navbar/navbar.html'"></div>
+<header class="hero-unit" id="banner">
+	<div class="container">
+		<h1>Generate Disbursement Account Create</h1>
+	</div>
+</header>
+<div class="container">
+	<form>
+
+		<div class="form-group">
+			<label>created</label>
+			<input input type="text" id="created" class="form-control" placeholder="Enter created Here" ng-model="formData.created">
+		</div>
+
+		<div class="form-group">
+			<label>user</label>
+			<input input type="text" id="user" class="form-control" placeholder="Enter user Here" ng-model="formData.user">
+		</div>
+
+		<div class="form-group">
+			<label>vessel_no</label>
+			<input input type="text" id="vessel_no" class="form-control" placeholder="Enter vessel_no Here" ng-model="formData.vessel_no">
+		</div>
+
+		<div class="form-group">
+			<label>customer_no</label>
+			<input input type="text" id="customer_no" class="form-control" placeholder="Enter customer_no Here" ng-model="formData.customer_no">
+		</div>
+
+		<div class="form-group">
+			<label>arvd</label>
+			<input input type="text" id="arvd" class="form-control" placeholder="Enter arvd Here" ng-model="formData.arvd">
+		</div>
+
+		<div class="form-group">
+			<label>disb_no</label>
+			<input input type="text" id="disb_no" class="form-control" placeholder="Enter disb_no Here" ng-model="formData.disb_no">
+		</div>
+
+		<div class="form-group">
+			<label>disb_date</label>
+			<input input type="text" id="disb_date" class="form-control" placeholder="Enter disb_date Here" ng-model="formData.disb_date">
+		</div>
+
+		<div class="form-group">
+			<label>sailed_date</label>
+			<input input type="text" id="sailed_date" class="form-control" placeholder="Enter sailed_date Here" ng-model="formData.sailed_date">
+		</div>
+
+		<div class="form-group">
+			<label>hide</label>
+			<input input type="text" id="hide" class="form-control" placeholder="Enter hide Here" ng-model="formData.hide">
+		</div>
+
+		<div class="form-group">
+			<label>approval</label>
+			<input input type="text" id="approval" class="form-control" placeholder="Enter approval Here" ng-model="formData.approval">
+		</div>
+
+		<button type="submit" class="btn btn-primary" ng-click="submit()">Add</button>
+	</form>
+</div>
+<footer class="footer">
+  <div class="container">
+      <p><a href="http://innobyt.com">Innobyt Hellenic Web Application</a></p>
+  </div>
+</footer>
