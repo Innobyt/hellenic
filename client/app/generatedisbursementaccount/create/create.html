@@ -17,14 +17,18 @@
 			<input input type="text" id="user" class="form-control" placeholder="Enter user Here" ng-model="formData.user">
 		</div>
 
-		<div class="form-group">
-			<label>vessel_no</label>
-			<input input type="text" id="vessel_no" class="form-control" placeholder="Enter vessel_no Here" ng-model="formData.vessel_no">
+		<div>
+			<label>vessel_number</label>
+			<div>
+				<select class="form-control" ng-model="formData.vessel_number" ng-options="vessel.number as vessel.number for vessel in vessels"></select>
+			</div>
 		</div>
 
-		<div class="form-group">
-			<label>customer_no</label>
-			<input input type="text" id="customer_no" class="form-control" placeholder="Enter customer_no Here" ng-model="formData.customer_no">
+		<div>
+			<label>customer_number</label>
+			<div>
+				<select class="form-control" ng-model="formData.customer_number" ng-options="customer.number as customer.number for customer in customers"></select>
+			</div>
 		</div>
 
 		<div class="form-group">
