@@ -14,6 +14,7 @@ module.exports = function(app) {
   app.use('/api/vendortable', require('./api/vendortable'));
   app.use('/api/vesseltable', require('./api/vesseltable'));
   app.use('/api/expensetable', require('./api/expensetable'));
+  app.use('/api/systemutilities', require('./api/systemutilities'));
   app.use('/api/billingmaintenance', require('./api/billingmaintenance'));
   app.use('/api/generatecreditdebitnote', require('./api/generatecreditdebitnote'));
   app.use('/api/normalbillingmaintenance', require('./api/normalbillingmaintenance'));
