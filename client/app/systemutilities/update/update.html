@@ -1,0 +1,60 @@
+<div ng-include="'../components/navbar/navbar.html'"></div>
+<header class="hero-unit" id="banner">
+	<div class="container">
+		<h1>System Utilities</h1>
+	</div>
+</header>
+<div class="container">
+	<form>
+		<div class="form-group">
+			<label>created</label>
+			<input type="text" id="created" class="form-control" placeholder="created" ng-model="formData.created">
+		</div>
+		<div class="form-group">
+			<label>user</label>
+			<input type="text" id="user" class="form-control" placeholder="user" ng-model="formData.user">
+		</div>
+		<div class="form-group">
+			<label>name</label>
+			<input type="text" id="name" class="form-control" placeholder="name" ng-model="formData.name">
+		</div>
+		<div class="form-group">
+			<label>email</label>
+			<input type="text" id="email" class="form-control" placeholder="email" ng-model="formData.email">
+		</div>
+		<div class="form-group">
+			<label>location</label>
+			<input type="text" id="location" class="form-control" placeholder="location" ng-model="formData.location">
+		</div>
+		<div class="form-group">
+			<label>username</label>
+			<input type="text" id="username" class="form-control" placeholder="username" ng-model="formData.username">
+		</div>
+		<div class="form-group">
+			<label>password</label>
+			<input type="text" id="password" class="form-control" placeholder="password" ng-model="formData.password">
+		</div>
+		<div class="form-group">
+			<label>company_name</label>
+			<input type="text" id="company_name" class="form-control" placeholder="company_name" ng-model="formData.company_name">
+		</div>
+		<div class="form-group">
+			<label>company_address</label>
+			<input type="text" id="company_address" class="form-control" placeholder="company_address" ng-model="formData.company_address">
+		</div>
+		<div class="form-group">
+			<label>gst_reg_no</label>
+			<input type="text" id="gst_reg_no" class="form-control" placeholder="gst_reg_no" ng-model="formData.gst_reg_no">
+		</div>
+		<div class="form-group">
+			<label>gst</label>
+			<input type="text" id="gst" class="form-control" placeholder="gst" ng-model="formData.gst">
+		</div>
+		<button type="submit" class="btn btn-primary" ng-click="submit()">Add</button>
+	</form>
+</div>
+<footer class="footer">
+  <div class="container">
+      <p><a href="http://innobyt.com">Innobyt Hellenic Web Application</a></p>
+  </div>
+</footer>

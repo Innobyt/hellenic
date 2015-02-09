@@ -1,0 +1,59 @@
+<div ng-include="'../components/navbar/navbar.html'"></div>
+<header class="hero-unit" id="banner">
+	<div class="container">
+		<h1>System Utilities</h1>
+	</div>
+</header>
+<div class="container">
+	<a class="btn btn-primary" ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv">Export to CSV</a>
+	<button ng-click="tableParams.sorting({})" class="btn btn-default pull-right">Clear sorting</button>
+	<button ng-click="tableParams.filter({})" class="btn btn-default pull-right">Clear filter</button>
+	<table ng-table="tableParams" show-filter="true" class="table" export-csv="csv">
+		<tr ng-repeat="systemutilities in $data">
+			<td data-title="'created'" sortable="'created'" filter="{ 'created': 'text' }">
+				{{systemutilities.created}}
+			</td>
+			<td data-title="'user'" sortable="'user'" filter="{ 'user': 'text' }">
+				{{systemutilities.user}}
+			</td>
+			<td data-title="'name'" sortable="'name'" filter="{ 'name': 'text' }">
+				{{systemutilities.name}}
+			</td>
+			<td data-title="'email'" sortable="'email'" filter="{ 'email': 'text' }">
+				{{systemutilities.email}}
+			</td>
+			<td data-title="'location'" sortable="'location'" filter="{ 'location': 'text' }">
+				{{systemutilities.location}}
+			</td>
+			<td data-title="'username'" sortable="'username'" filter="{ 'username': 'text' }">
+				{{systemutilities.username}}
+			</td>
+			<td data-title="'password'" sortable="'password'" filter="{ 'password': 'text' }">
+				{{systemutilities.password}}
+			</td>
+			<td data-title="'company_name'" sortable="'company_name'" filter="{ 'company_name': 'text' }">
+				{{systemutilities.company_name}}
+			</td>
+			<td data-title="'company_address'" sortable="'company_address'" filter="{ 'company_address': 'text' }">
+				{{systemutilities.company_address}}
+			</td>
+			<td data-title="'gst_reg_no'" sortable="'gst_reg_no'" filter="{ 'gst_reg_no': 'text' }">
+				{{systemutilities.gst_reg_no}}
+			</td>
+			<td data-title="'gst'" sortable="'gst'" filter="{ 'gst': 'text' }">
+				{{systemutilities.gst}}
+			</td>
+			<td data-title="'View'">
+				<a class="btn btn-primary" href="/systemutilities/query/{{systemutilities._id}}">View</a>
+			</td>
+			<td data-title="'Update'">
+				<a class="btn btn-primary" href="/systemutilities/update/{{systemutilities._id}}">Update</a>
+			</td> 
+		</tr>
+	</table>
+</div>
+<footer class="footer">
+  <div class="container">
+      <p><a href="http://innobyt.com">Innobyt Hellenic Web Application</a></p>
+  </div>
+</footer>
