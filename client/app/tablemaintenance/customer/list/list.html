@@ -10,12 +10,32 @@
 	<button ng-click="tableParams.filter({})" class="btn btn-default pull-right">Clear filter</button>
 	<table ng-table="tableParams" show-filter="true" class="table" export-csv="csv">
 		<tr ng-repeat="customer in $data">
-		<!-- add table maintenance customer table -->
+			<td data-title="'vessel_name'" sortable="'vessel_name'" filter="{ 'vessel_name': 'text' }">
+				{{customer.vessel_name}}
+			</td>
+			<td data-title="'vessel_number'" sortable="'vessel_number'" filter="{ 'vessel_number': 'text' }">
+				{{customer.vessel_number}}
+			</td>
+			<td data-title="'balance'" sortable="'balance'" filter="{ 'balance': 'text' }">
+				{{customer.balance}}
+			</td>
+			<td data-title="'dateofbalance'" sortable="'dateofbalance'" filter="{ 'dateofbalance': 'text' }">
+				{{customer.dateofbalance}}
+			</td>
+			<td data-title="'customer_number'" sortable="'customer_number'" filter="{ 'customer_number': 'text' }">
+				{{customer.customer_number}}
+			</td>
+			<td data-title="'customer_name'" sortable="'customer_name'" filter="{ 'customer_name': 'text' }">
+				{{customer.customer_name}}
+			</td>
+			<td data-title="'customeraddress'" sortable="'customeraddress'" filter="{ 'customeraddress': 'text' }">
+				{{customer.customeraddress}}
+			</td>
 			<td data-title="'View'">
-				<a class="btn btn-primary" href="/tablemaintenance_customer/query/{{customer._id}}">View</a>
+				<a class="btn btn-primary" href="/tablemaintenance_vessel/query/{{customer._id}}">View</a>
 			</td>
 			<td data-title="'Update'">
-				<a class="btn btn-primary" href="/tablemaintenance_customer/update/{{customer._id}}">Update</a>
+				<a class="btn btn-primary" href="/tablemaintenance_vessel/update/{{customer._id}}">Update</a>
 			</td> 
 		</tr>
 	</table>
