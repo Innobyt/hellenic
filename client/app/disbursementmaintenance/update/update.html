@@ -57,8 +57,10 @@
 			<input type="text" id="created" class="form-control" placeholder="billing" ng-model="formData.billing">
 		</div>
 		<div class="form-group">
-			<label>gst</label>
-			<input type="text" id="created" class="form-control" placeholder="gst" ng-model="formData.gst">
+		    <label> gst yes</label>
+		    <input type="radio" id="gst" name="gst" value="yes" ng-model="formData.gst" />
+		    <label> gst no </label>
+		    <input type="radio" id="gst" name="gst" value="no" ng-model="formData.gst" />
 		</div>
 		<div class="form-group">
 			<label>gst_percentage</label>
