@@ -4,9 +4,9 @@
 	angular.module('hellenicApp')
 	  .controller('billingmaintenancedebitCreateCtrl', billingmaintenancedebitCreateCtrl);
 	
-	billingmaintenancedebitCreateCtrl.$inject=['$scope', 'billingmaintenancedebit', 'vesseltable' , 'customertable'];
+	billingmaintenancedebitCreateCtrl.$inject=['$scope', 'billingmaintenancedebit', 'vesseltable' , 'customertable', 'expensetable'];
 
-	function billingmaintenancedebitCreateCtrl($scope, billingmaintenancedebit, vesseltable, customertable) {
+	function billingmaintenancedebitCreateCtrl($scope, billingmaintenancedebit, vesseltable, customertable, expensetable) {
 
 		// initialize create controller
 		$scope.initialize = function(){
@@ -21,6 +21,11 @@
 			customertable.view().$promise.then(
 				function(response) {
 					$scope.customers = response;
+				});
+			// get expensetable collection from the factory
+			expensetable.view().$promise.then(
+				function(response) {
+					$scope.expenses = response;
 				});
 		};
 
