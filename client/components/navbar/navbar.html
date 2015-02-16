@@ -15,6 +15,68 @@
             <a ng-href="{{item.link}}">{{item.title}}</a>
         </li>
         <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}"><a href="/admin">Admin</a></li>
+        <li ng-show="isLoggedIn()" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Disbursement Maintenance <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Credit</a></li>
+                <li><a href="#">Debit</a></li>
+            </ul>
+        </li>
+        <li ng-show="isLoggedIn()" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Billing Maintenance <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="/list_billingmaintenancecredit">Credit</a></li>
+                <li><a href="/list_billingmaintenancedebit">Debit</a></li>
+            </ul>
+        </li>
+        <li ng-show="isLoggedIn()" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Normal Billing Maintenance <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Credit</a></li>
+                <li><a href="#">Debit</a></li>
+            </ul>
+        </li>
+        <li ng-show="isLoggedIn()" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Generate <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Debit Note</a></li>
+                <li><a href="#">Credit Note</a></li>
+                <li><a href="#">Disbursement Account</a></li>
+                <li><a href="#">Customer Mailing Label</a></li>
+            </ul>
+        </li>
+        <li ng-show="isLoggedIn()" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reports <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Disbursement Transaction Listing By Expense Code</a></li>
+                <li><a href="#">Disbursement Transaction Listing By T/Date</a></li>
+                <li><a href="#">Expense Summary</a></li>
+                <li><a href="#">Vessel Account Listing</a></li>
+                <li><a href="#">Disbursement Account Listing By Date</a></li>
+                <li><a href="#">Disbursement Billing Report</a></li>
+                <li><a href="#">Dr/Cr Note Summary Report</a></li>
+                <li><a href="#">Disbursement Report Of Cash Receipts</a></li>
+            </ul>
+        </li>
+        <li ng-show="isLoggedIn()" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Database <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Customer</a></li>
+                <li><a href="#">Vessel</a></li>
+                <li><a href="#">Expense A/C Code</a></li>
+                <li><a href="#">Vendor</a></li>
+
+            </ul>
+        </li>
+        <li ng-show="isLoggedIn()" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">System <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Company Profile</a></li>
+                <li><a href="#">Vessel A/C Adjustment</a></li>
+                <li><a href="#">Transfer Data to AP/AR System</a></li>
+            </ul>
+        </li>
+
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
