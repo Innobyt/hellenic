@@ -16,24 +16,16 @@
         </li>
         <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}"><a href="/admin">Admin</a></li>
         <li ng-show="isLoggedIn()" class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Disbursement Maintenance <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Maintenance <b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a href="#">Credit</a></li>
-                <li><a href="#">Debit</a></li>
-            </ul>
-        </li>
-        <li ng-show="isLoggedIn()" class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Billing Maintenance <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-                <li><a href="/list_billingmaintenancecredit">Credit</a></li>
-                <li><a href="/list_billingmaintenancedebit">Debit</a></li>
-            </ul>
-        </li>
-        <li ng-show="isLoggedIn()" class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Normal Billing Maintenance <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Credit</a></li>
-                <li><a href="#">Debit</a></li>
+                <li class="dropdown">
+                    <li><a href="/disbursement_maintenance/list"><b>Disbursement Maintenance</b></a></li>
+                    <li class="divider"></li>
+                    <li><a href="/billingmaintenancecredit/list"><b>Billing Maintenance</b> - List Credit</a></li>
+                    <li><a href="/billingmaintenancedebit/list"><b>Billing Maintenance</b> - List Debit</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/normalbillingmaintenance/list"><b>Normal Billing Maintenance</b></a></li>
+                </li>
             </ul>
         </li>
         <li ng-show="isLoggedIn()" class="dropdown">

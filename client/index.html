@@ -15,6 +15,7 @@
       <!-- bower:css -->
       <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
       <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+      <link rel="stylesheet" href="bower_components/ng-table/ng-table.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -61,6 +62,8 @@
       <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/ng-table/ng-table.js"></script>
+      <script src="bower_components/ng-table-export/ng-table-export.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
 
@@ -70,11 +73,89 @@
           <script src="app/account/account.js"></script>
           <script src="app/account/login/login.controller.js"></script>
           <script src="app/account/settings/settings.controller.js"></script>
-          <script src="app/account/signup/signup.controller.js"></script>
           <script src="app/admin/admin.controller.js"></script>
           <script src="app/admin/admin.js"></script>
+          <script src="app/admin/usercreate/usercreate.controller.js"></script>
+          <script src="app/billingmaintenancecredit/billingmaintenancecredit.js"></script>
+          <script src="app/billingmaintenancecredit/billingmaintenancecredit.service.js"></script>
+          <script src="app/billingmaintenancecredit/create/create.controller.js"></script>
+          <script src="app/billingmaintenancecredit/list/list.controller.js"></script>
+          <script src="app/billingmaintenancecredit/query/query.controller.js"></script>
+          <script src="app/billingmaintenancecredit/update/update.controller.js"></script>
+          <script src="app/billingmaintenancedebit/billingmaintenancedebit.js"></script>
+          <script src="app/billingmaintenancedebit/billingmaintenancedebit.service.js"></script>
+          <script src="app/billingmaintenancedebit/create/create.controller.js"></script>
+          <script src="app/billingmaintenancedebit/list/list.controller.js"></script>
+          <script src="app/billingmaintenancedebit/query/query.controller.js"></script>
+          <script src="app/billingmaintenancedebit/update/update.controller.js"></script>
+          <script src="app/customertable/create/create.controller.js"></script>
+          <script src="app/customertable/customertable.js"></script>
+          <script src="app/customertable/customertable.service.js"></script>
+          <script src="app/customertable/list/list.controller.js"></script>
+          <script src="app/customertable/query/query.controller.js"></script>
+          <script src="app/customertable/update/update.controller.js"></script>
+          <script src="app/disbursementmaintenance/create/create.controller.js"></script>
+          <script src="app/disbursementmaintenance/disbursementmaintenance.js"></script>
+          <script src="app/disbursementmaintenance/disbursementmaintenance.service.js"></script>
+          <script src="app/disbursementmaintenance/list/list.controller.js"></script>
+          <script src="app/disbursementmaintenance/query/query.controller.js"></script>
+          <script src="app/disbursementmaintenance/update/update.controller.js"></script>
+          <script src="app/expensetable/create/create.controller.js"></script>
+          <script src="app/expensetable/expensetable.js"></script>
+          <script src="app/expensetable/expensetable.service.js"></script>
+          <script src="app/expensetable/list/list.controller.js"></script>
+          <script src="app/expensetable/query/query.controller.js"></script>
+          <script src="app/expensetable/update/update.controller.js"></script>
+          <script src="app/generatecreditnote/create/create.controller.js"></script>
+          <script src="app/generatecreditnote/generatecreditnote.js"></script>
+          <script src="app/generatecreditnote/generatecreditnote.service.js"></script>
+          <script src="app/generatecreditnote/list/list.controller.js"></script>
+          <script src="app/generatecreditnote/query/query.controller.js"></script>
+          <script src="app/generatecreditnote/update/update.controller.js"></script>
+          <script src="app/generatedebitnote/create/create.controller.js"></script>
+          <script src="app/generatedebitnote/generatedebitnote.js"></script>
+          <script src="app/generatedebitnote/generatedebitnote.service.js"></script>
+          <script src="app/generatedebitnote/list/list.controller.js"></script>
+          <script src="app/generatedebitnote/query/query.controller.js"></script>
+          <script src="app/generatedebitnote/update/update.controller.js"></script>
+          <script src="app/generatedisbursementaccount/create/create.controller.js"></script>
+          <script src="app/generatedisbursementaccount/generatedisbursementaccount.js"></script>
+          <script src="app/generatedisbursementaccount/generatedisbursementaccount.service.js"></script>
+          <script src="app/generatedisbursementaccount/list/list.controller.js"></script>
+          <script src="app/generatedisbursementaccount/query/query.controller.js"></script>
+          <script src="app/generatedisbursementaccount/update/update.controller.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
+          <script src="app/normalbillingmaintenance/create/create.controller.js"></script>
+          <script src="app/normalbillingmaintenance/list/list.controller.js"></script>
+          <script src="app/normalbillingmaintenance/normalbillingmaintenance.js"></script>
+          <script src="app/normalbillingmaintenance/normalbillingmaintenance.service.js"></script>
+          <script src="app/normalbillingmaintenance/query/query.controller.js"></script>
+          <script src="app/normalbillingmaintenance/update/update.controller.js"></script>
+          <script src="app/systemutilities/create/create.controller.js"></script>
+          <script src="app/systemutilities/list/list.controller.js"></script>
+          <script src="app/systemutilities/query/query.controller.js"></script>
+          <script src="app/systemutilities/systemutilities.js"></script>
+          <script src="app/systemutilities/systemutilities.service.js"></script>
+          <script src="app/systemutilities/update/update.controller.js"></script>
+          <script src="app/tablemaintenance/customer/create/create.controller.js"></script>
+          <script src="app/tablemaintenance/customer/customer.js"></script>
+          <script src="app/tablemaintenance/customer/customer.service.js"></script>
+          <script src="app/tablemaintenance/customer/list/list.controller.js"></script>
+          <script src="app/tablemaintenance/customer/query/query.controller.js"></script>
+          <script src="app/tablemaintenance/customer/update/update.controller.js"></script>
+          <script src="app/tablemaintenance/expense/create/create.controller.js"></script>
+          <script src="app/tablemaintenance/expense/expense.js"></script>
+          <script src="app/tablemaintenance/expense/expense.service.js"></script>
+          <script src="app/tablemaintenance/expense/list/list.controller.js"></script>
+          <script src="app/tablemaintenance/expense/query/query.controller.js"></script>
+          <script src="app/tablemaintenance/expense/update/update.controller.js"></script>
+          <script src="app/vesseltable/create/create.controller.js"></script>
+          <script src="app/vesseltable/list/list.controller.js"></script>
+          <script src="app/vesseltable/query/query.controller.js"></script>
+          <script src="app/vesseltable/update/update.controller.js"></script>
+          <script src="app/vesseltable/vesseltable.js"></script>
+          <script src="app/vesseltable/vesseltable.service.js"></script>
           <script src="components/auth/auth.service.js"></script>
           <script src="components/auth/user.service.js"></script>
           <script src="components/modal/modal.service.js"></script>

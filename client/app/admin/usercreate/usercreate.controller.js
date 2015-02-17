@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('hellenicApp')
-  .controller('SignupCtrl', function ($scope, Auth, $location) {
+  .controller('UsercreateCtrl', function ($scope, Auth, $location) {
     $scope.user = {};
     $scope.errors = {};
 
@@ -16,7 +16,7 @@ angular.module('hellenicApp')
         })
         .then( function() {
           // Account created, redirect to home
-          $location.path('/');
+          $location.path('/admin');
         })
         .catch( function(err) {
           err = err.data;
