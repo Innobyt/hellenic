@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('hellenicApp')
-  .controller('MainCtrl', function ($scope, $http) {
-
+  .controller('MainCtrl', function ($scope) {
+    $scope.message = 'Hello';
   });
