@@ -60,7 +60,7 @@ angular.module('hellenicApp')
         var cb = callback || angular.noop;
 
         return User.save(user,
-          function(data) {
+          function() {
  //           $cookieStore.put('token', data.token);
             currentUser = User.get();
             return cb(user);
