@@ -16,7 +16,7 @@ angular.module('hellenicApp')
           role: $scope.user.role
         })
         .then( function() {
-          // Account created, redirect to home
+          // Account created, redirect to Admin page
           $location.path('/admin');
         })
         .catch( function(err) {
