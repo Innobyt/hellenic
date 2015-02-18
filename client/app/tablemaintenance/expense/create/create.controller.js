@@ -3,7 +3,6 @@
 
 	angular.module('hellenicApp')
 	  .controller('tablemaintenance_expenseCreateCtrl', tablemaintenance_expenseCreateCtrl);
-
 	tablemaintenance_expenseCreateCtrl.$inject=['$scope', 'tablemaintenance_expense', 'expensetable'];
 
 	function tablemaintenance_expenseCreateCtrl($scope, tablemaintenance_expense, expensetable) {

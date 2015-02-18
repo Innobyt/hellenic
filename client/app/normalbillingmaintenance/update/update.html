@@ -15,8 +15,10 @@
 			<input type="text" id="user" class="form-control" placeholder="user" ng-model="formData.user">
 		</div>
 		<div class="form-group">
-			<label>cdtype</label>
-			<input type="text" id="cdtype" class="form-control" placeholder="cdtype" ng-model="formData.cdtype">
+		    <label> debit </label>
+		    <input type="radio" id="cd_type" name="cd_type" value="debit" ng-model="formData.cd_type" />
+		    <label> credit </label>
+		    <input type="radio" id="cd_type" name="cd_type" value="credit" ng-model="formData.cd_type" />
 		</div>
 		<div class="form-group">
 			<label>arvd</label>
@@ -41,8 +43,10 @@
 			<input type="text" id="billing" class="form-control" placeholder="billing" ng-model="formData.billing">
 		</div>
 		<div class="form-group">
-			<label>gstyn</label>
-			<input type="text" id="gstyn" class="form-control" placeholder="gstyn" ng-model="formData.gstyn">
+		    <label> gst yes</label>
+		    <input type="radio" id="gst" name="gst" value="yes" ng-model="formData.gst" />
+		    <label> gst no </label>
+		    <input type="radio" id="gst" name="gst" value="no" ng-model="formData.gst" />
 		</div>
 		<div class="form-group">
 			<label>gstpercentage</label>
