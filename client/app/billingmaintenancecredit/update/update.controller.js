@@ -4,9 +4,9 @@
 	angular.module('hellenicApp')
 	  .controller('billingmaintenancecreditUpdateCtrl', billingmaintenancecreditUpdateCtrl);
 	
-	billingmaintenancecreditUpdateCtrl.$inject=['$scope', '$stateParams', 'billingmaintenancecredit', 'vesseltable' , 'customertable'];
+	billingmaintenancecreditUpdateCtrl.$inject=['$scope', '$stateParams', 'billingmaintenancecredit', 'vesseltable' , 'customertable', 'expensetable'];
 
-	function billingmaintenancecreditUpdateCtrl($scope, $stateParams, billingmaintenancecredit, vesseltable, customertable) {
+	function billingmaintenancecreditUpdateCtrl($scope, $stateParams, billingmaintenancecredit, vesseltable, customertable, expensetable) {
 
 		// get a billingmaintenancecredit object from the factory
 		$scope.billingmaintenancecredit = billingmaintenancecredit.query({ id: $stateParams.id });
@@ -24,6 +24,11 @@
 			customertable.view().$promise.then(
 				function(response) {
 					$scope.customers = response;
+				});
+			// get expensetable collection from the factory
+			expensetable.view().$promise.then(
+				function(response) {
+					$scope.expenses = response;
 				});
 		};
 
