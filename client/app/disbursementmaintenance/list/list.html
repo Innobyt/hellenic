@@ -5,7 +5,8 @@
 	</div>
 </header>
 <div class="container">
-	<a class="btn btn-primary" ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv">Export to CSV</a>
+	<!-- ngTable Codes -->
+	<!-- <a class="btn btn-primary" ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv">Export to CSV</a>
 	<button ng-click="tableParams.sorting({})" class="btn btn-default pull-right">Clear sorting</button>
 	<button ng-click="tableParams.filter({})" class="btn btn-default pull-right">Clear filter</button>
 	<table ng-table="tableParams" show-filter="true" class="table" export-csv="csv">
@@ -48,7 +49,15 @@
 				<a class="btn btn-primary" href="/disbursement_maintenance/update/{{disbursementmaintenance._id}}">Update</a>
 			</td> 
 		</tr>
-	</table>
+	</table> -->
+	<div 	ui-grid="gridOptions" class="myGrid"
+			ui-grid-pagination 
+			ui-grid-exporter 
+			ui-grid-edit 
+			ui-grid-row-edit 
+			ui-grid-cellNav 
+			ui-grid-resize-columns 
+			ui-grid-move-columns></div>
 </div>
 <footer class="footer">
   <div class="container">
