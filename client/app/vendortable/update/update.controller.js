@@ -2,15 +2,15 @@
 	'use strict';
 
 	angular.module('hellenicApp')
-	  .controller('expensetableUpdateCtrl', expensetableUpdateCtrl);
+	  .controller('vendortableUpdateCtrl', vendortableUpdateCtrl);
 	
-	expensetableUpdateCtrl.$inject=['$scope', '$stateParams', 'expensetable'];
+	vendortableUpdateCtrl.$inject=['$scope', '$stateParams', 'vendortable'];
 
-	function expensetableUpdateCtrl($scope, $stateParams, expensetable) {
+	function vendortableUpdateCtrl($scope, $stateParams, vendortable) {
 
 		$scope.initialize = function(){
-			// query expensetable
-			expensetable.query({
+			// query vendortable
+			vendortable.query({
 				id: $stateParams.id
 			}).$promise.then(
 				function(response) {
@@ -23,7 +23,7 @@
 			$scope.formData.$update({
 				id: $stateParams.id
 			}, function() {
-				$state.go('list_expensetable');
+				$state.go('list_vendortable');
 			});
 		};
 		$scope.initialize();

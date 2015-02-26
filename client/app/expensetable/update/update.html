@@ -1,40 +1,31 @@
 <div ng-include="'../components/navbar/navbar.html'"></div>
 <header class="hero-unit" id="banner">
 	<div class="container">
-		<h1>Expense Table Update - {{accode}}</h1>
+		<h1>Expense Table Update - {{formData.accode}}</h1>
 	</div>
 </header>
 <div class="container">
 	<form>
 		<div class="form-group">
-			<label>created</label>
-			<input type="text" id="created" class="form-control" placeholder="created" ng-model="formData.created">
-		</div>
+			<label>Expense A/C Code</label>
+			<input input type="text" id="accode" class="form-control" placeholder="Enter accode Here" ng-model="formData.accode">
+		</div>		
+
 		<div class="form-group">
-			<label>user</label>
-			<input type="text" id="user" class="form-control" placeholder="user" ng-model="formData.user">
+			<label>Description</label>
+			<input input type="text" id="desc" class="form-control" placeholder="Enter desc Here" ng-model="formData.desc">
 		</div>
-		<div class="form-group">
-			<label>gst</label>
-			<input type="text" id="gst" class="form-control" placeholder="gst" ng-model="formData.gst">
+
+		<div class="form-group col-lg-12">
+			<label>GST: </label>
+			<label class="radio-inline">
+				<input type="radio" id="gst" name="gst" value="yes" ng-model="formData.gst"> yes
+			</label>
+			<label class="radio-inline">
+				<input type="radio" id="gst" name="gst" value="no" ng-model="formData.gst"> no
+			</label>
 		</div>
-		<div class="form-group">
-			<label>desc</label>
-			<input type="text" id="desc" class="form-control" placeholder="desc" ng-model="formData.desc">
-		</div>
-		<div class="form-group">
-			<label>accode</label>
-			<input type="text" id="accode" class="form-control" placeholder="accode" ng-model="formData.accode">
-		</div>
-		<div class="form-group">
-			<label>hide</label>
-			<input type="text" id="hide" class="form-control" placeholder="hide" ng-model="formData.hide">
-		</div>
-		<div class="form-group">
-			<label>approval</label>
-			<input type="text" id="approval" class="form-control" placeholder="approval" ng-model="formData.approval">
-		</div>
-		<button type="submit" class="btn btn-primary" ng-click="submit()">Add</button>
+		<button type="submit" class="btn btn-primary" ng-click="submit()">Update</button>
 	</form>
 </div>
 <footer class="footer">

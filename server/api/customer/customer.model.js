@@ -6,13 +6,13 @@ var mongoose = require('mongoose'),
 /**
  * customer Schema
  */
-var customer  = new Schema({
-    created         : String,
-    user            : String,
-    number    		: String,
-    name      		: String,
-    hide            : String,
-    approval        : String
+var customer = new Schema({
+	created			: String,
+	user			: String,
+	number			: String,
+	name			: String,
+	address			: String,
+	hide			: String,
+	approval		: String
 });
-
 module.exports = mongoose.model('customer ', customer );

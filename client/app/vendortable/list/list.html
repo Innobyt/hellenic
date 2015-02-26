@@ -1,7 +1,7 @@
 <div ng-include="'../components/navbar/navbar.html'"></div>
 <header class="hero-unit" id="banner">
 	<div class="container">
-		<h1>Table Maintenance Expense</h1>
+		<h1>vendor Table</h1>
 	</div>
 </header>
 <div class="container">
@@ -9,33 +9,30 @@
 	<button ng-click="tableParams.sorting({})" class="btn btn-default pull-right">Clear sorting</button>
 	<button ng-click="tableParams.filter({})" class="btn btn-default pull-right">Clear filter</button>
 	<table ng-table="tableParams" show-filter="true" class="table" export-csv="csv">
-		<tr ng-repeat="expense in $data">
+		<tr ng-repeat="vendor in $data">
 			<td data-title="'created'" sortable="'created'" filter="{ 'created': 'text' }">
-				{{expense.created}}
+				{{vendor.created}}
 			</td>
 			<td data-title="'user'" sortable="'user'" filter="{ 'user': 'text' }">
-				{{expense.user}}
+				{{vendor.user}}
 			</td>
-			<td data-title="'gst'" sortable="'gst'" filter="{ 'gst': 'text' }">
-				{{expense.gst}}
+			<td data-title="'number'" sortable="'number'" filter="{ 'number': 'text' }">
+				{{vendor.number}}
 			</td>
-			<td data-title="'desc'" sortable="'desc'" filter="{ 'desc': 'text' }">
-				{{expense.desc}}
-			</td>
-			<td data-title="'accode'" sortable="'accode'" filter="{ 'accode': 'text' }">
-				{{expense.accode}}
+			<td data-title="'name'" sortable="'name'" filter="{ 'name': 'text' }">
+				{{vendor.name}}
 			</td>
 			<td data-title="'hide'" sortable="'hide'" filter="{ 'hide': 'text' }">
-				{{expense.hide}}
+				{{vendor.hide}}
 			</td>
 			<td data-title="'approval'" sortable="'approval'" filter="{ 'approval': 'text' }">
-				{{expense.approval}}
+				{{vendor.approval}}
 			</td>
 			<td data-title="'View'">
-				<a class="btn btn-primary" href="/tablemaintenance_expense/query/{{expense._id}}">View</a>
+				<a class="btn btn-primary" href="/vendortable/query/{{vendor._id}}">View</a>
 			</td>
 			<td data-title="'Update'">
-				<a class="btn btn-primary" href="/tablemaintenance_expense/update/{{expense._id}}">Update</a>
+				<a class="btn btn-primary" href="/vendortable/update/{{vendor._id}}">Update</a>
 			</td> 
 		</tr>
 	</table>

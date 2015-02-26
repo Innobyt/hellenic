@@ -10,20 +10,11 @@
 	<button ng-click="tableParams.filter({})" class="btn btn-default pull-right">Clear filter</button>
 	<table ng-table="tableParams" show-filter="true" class="table" export-csv="csv">
 		<tr ng-repeat="customer in $data">
-			<td data-title="'created'" sortable="'created'" filter="{ 'created': 'text' }">
-				{{customer.created}}
-			</td>
-			<td data-title="'user'" sortable="'user'" filter="{ 'user': 'text' }">
-				{{customer.user}}
-			</td>
 			<td data-title="'number'" sortable="'number'" filter="{ 'number': 'text' }">
 				{{customer.number}}
 			</td>
 			<td data-title="'name'" sortable="'name'" filter="{ 'name': 'text' }">
 				{{customer.name}}
-			</td>
-			<td data-title="'hide'" sortable="'hide'" filter="{ 'hide': 'text' }">
-				{{customer.hide}}
 			</td>
 			<td data-title="'approval'" sortable="'approval'" filter="{ 'approval': 'text' }">
 				{{customer.approval}}

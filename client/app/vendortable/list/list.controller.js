@@ -3,14 +3,14 @@
 	'use strict';
 	
 	angular.module('hellenicApp')
-	  .controller('tablemaintenance_expenseListCtrl', tablemaintenance_expenseListCtrl);
+	  .controller('vendortableListCtrl', vendortableListCtrl);
 
-	tablemaintenance_expenseListCtrl.$inject=['$scope', '$filter', 'ngTableParams', 'tablemaintenance_expense'];
+	vendortableListCtrl.$inject=['$scope', '$filter', 'ngTableParams', 'vendortable'];
 	
-	function tablemaintenance_expenseListCtrl($scope, $filter, ngTableParams, tablemaintenance_expense) {
+	function vendortableListCtrl($scope, $filter, ngTableParams, vendortable) {
 		
-		// get a tablemaintenance_expense collection from the factory
-		var data = $scope.list = tablemaintenance_expense.view();
+		// get a vendortable collection from the factory
+		var data = $scope.list = vendortable.view();
 
 		$scope.tableParams = new ngTableParams({
 			// show first page

@@ -19,7 +19,8 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Maintenance <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li class="dropdown">
-                    <li><a href="/disbursement_maintenance/list"><b>Disbursement Maintenance</b></a></li>
+                    <li><a href="/disbursement_maintenance/list"><b>List Disbursement Maintenance</b></a></li>
+                    <li><a href="/disbursement_maintenance/create"><b>Create Disbursement Maintenance</b></a></li>
                     <li class="divider"></li>
                     <li><a href="/billingmaintenancecredit/list"><b>Billing Maintenance</b> - List Credit</a></li>
                     <li><a href="/billingmaintenancedebit/list"><b>Billing Maintenance</b> - List Debit</a></li>
@@ -53,10 +54,17 @@
         <li ng-show="isLoggedIn()" class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Database <b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a href="#">Customer</a></li>
-                <li><a href="#">Vessel</a></li>
-                <li><a href="#">Expense A/C Code</a></li>
-                <li><a href="#">Vendor</a></li>
+                <li><a href="/customertable/list">List Customers</a></li>
+                <li><a href="/customertable/create">Add Customer</a></li>               
+                <li class="divider"></li>
+                <li><a href="/vesseltable/list">List Vessels</a></li>
+                <li><a href="/vesseltable/create">Add Vessel</a></li> 
+                <li class="divider"></li>
+                <li><a href="/expensetable/list/list">List Expense A/C Codes</a></li>
+                <li><a href="/expensetable/list/create">Add Expense A/C Code</a></li>
+                <li class="divider"></li>
+                <li><a href="/vendortable/list">List Vendors</a></li>
+                <li><a href="/vendortable/create">Add Vendor</a></li>
 
             </ul>
         </li>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('hellenicApp')
-  .factory('Modal', function ($rootScope, $modal) {
+  .factory('Modal', function($rootScope, $modal) {
     /**
      * Opens a modal
      * @param  {Object} scope      - an object to be merged with modal's scope
@@ -43,8 +43,8 @@ angular.module('hellenicApp')
            */
           return function() {
             var args = Array.prototype.slice.call(arguments),
-                name = args.shift(),
-                deleteModal;
+              name = args.shift(),
+              deleteModal;
 
             deleteModal = openModal({
               modal: {
@@ -71,7 +71,52 @@ angular.module('hellenicApp')
               del.apply(event, args);
             });
           };
+        },
+
+        /**
+         * Create a function to open a delete confirmation modal (ex. ng-click='myModalFn(name, arg1, arg2...)')
+         * @param  {Function} del - callback, ran when deleteEntry is confirmed
+         * @return {Function}     - the function to open the modal (ex. myModalFn)
+         */
+        deleteEntry: function(del) {
+          del = del || angular.noop;
+
+          /**
+ 
+           * @param  {String} name   - name or info to show on modal          * Open a delete confirmation modal
+           * @param  {All}           - any additional args are passed staight to del callback
+           */
+          return function() {
+            var args = Array.prototype.slice.call(arguments),
+              deleteModal;
+
+            deleteModal = openModal({
+              modal: {
+                dismissable: true,
+                title: 'Confirm Delete Entry',
+                html: '<p>Are you sure you want to delete this entry ?</p>',
+                buttons: [{
+                  classes: 'btn-danger',
+                  text: 'Delete',
+                  click: function(e) {
+                    deleteModal.close(e);
+                  }
+                }, {
+                  classes: 'btn-default',
+                  text: 'Cancel',
+                  click: function(e) {
+                    deleteModal.dismiss(e);
+                  }
+                }]
+              }
+            }, 'modal-danger');
+
+            deleteModal.result.then(function(event) {
+              del.apply(event, args);
+            });
+          };
         }
+
       }
     };
   });

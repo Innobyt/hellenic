@@ -5,105 +5,148 @@
 	</div>
 </header>
 <div class="container">
-	<form>
-		<div class="form-group">
-			<label>created</label>
-			<input type="text" id="created" class="form-control" placeholder="created" ng-model="formData.created">
+	<form  name="createForm" novalidate ng-submit="createForm.$valid && submit()"> 
+		<div class="form-group col-lg-12">
+			<label>Type: </label>
+		    <label class="radio-inline">
+				<input type="radio" id="cd_type" name="cd_type" value="debit" ng-model="formData.cd_type" ng-required="!formData.cd_type"> debit
+			</label>
+			<label class="radio-inline">
+  				<input type="radio" id="cd_type" name="cd_type" value="credit" ng-model="formData.cd_type" ng-required="!formData.cd_type"> credit
+			</label>
+			<span class="text-warning" ng-show="createForm.cd_type.$error.required">This field is required!</span>
 		</div>
-		<div class="form-group">
-			<label>user</label>
-			<input type="text" id="created" class="form-control" placeholder="user" ng-model="formData.user">
+
+		<div class="form-group col-lg-6">
+			<label>Vessel Number</label>
+			<div>
+				<select ng-model="selectedVessel" name="vesselnumber" class="form-control" ng-options="vessel.number for vessel in vessels" required>
+					<option value=''>{{selectedVessel.number}}</option>
+				</select>
+				<span class="text-warning" ng-show="createForm.vesselnumber.$dirty && createForm.vesselnumber.$invalid">Select Vessel</span>
+			</div>
 		</div>
-		<div class="form-group">
-			<label>arvd</label>
-			<input type="text" id="created" class="form-control" placeholder="arvd" ng-model="formData.arvd">
+
+		<div class="form-group col-lg-6">
+			<label>Vessel Name</label>
+			<div>
+				<input type="text" class="form-control" ng-model="selectedVessel.name" disabled>
+			</div>
 		</div>
-		<div class="form-group">
-			<label>t_date</label>
-			<input type="text" id="created" class="form-control" placeholder="t_date" ng-model="formData.t_date">
+
+
+		<div class="form-group col-lg-6">
+			<label>Customer Number</label>
+			<div>
+				<select ng-model="selectedCustomer" name="customer" class="form-control" ng-options="customer.number for customer in customers" required>
+					<option value='' disabled>{{selectedCustomer.number}}</option>
+				</select>
+			</div>
 		</div>
-		<div class="form-group">
-		    <label> debit </label>
-		    <input type="radio" id="cd_type" name="cd_type" value="debit" ng-model="formData.cd_type" />
-		    <label> credit </label>
-		    <input type="radio" id="cd_type" name="cd_type" value="credit" ng-model="formData.cd_type" />
+
+		<div class="form-group col-lg-6">
+			<label>Customer Name</label>
+			<div>
+				<input type="text" class="form-control" ng-model="selectedCustomer.name" disabled>
+			</div>
 		</div>
-		<div class="form-group">
-			<label>invoice_no</label>
-			<input type="text" id="created" class="form-control" placeholder="invoice_no" ng-model="formData.invoice_no">
+
+		<div class="form-group col-lg-6">
+			<label>Arrival Date</label>
+			<input input type="text" id="arvd" class="form-control" placeholder="Enter arvd Here" ng-model="formData.arvd">
 		</div>
-		<div class="form-group">
-			<label>vendor_acno</label>
-			<input type="text" id="created" class="form-control" placeholder="vendor_acno" ng-model="formData.vendor_acno">
+
+		<div class="form-group col-lg-6">
+			<label>Transaction Date</label>
+			<input input type="text" id="t_date" class="form-control" placeholder="Enter t_date Here" ng-model="formData.t_date">
 		</div>
-		<div class="form-group">
-			<label>invoice_date</label>
-			<input type="text" id="created" class="form-control" placeholder="invoice_date" ng-model="formData.invoice_date">
+
+		<div class="form-group col-lg-6">
+			<label>Vendor Account number</label>
+			<div>
+				<select ng-model="selectedVendor" name="vendor_acno" id="vendor_acno" class="form-control" ng-options="vendor.number for vendor in vendors">
+					<option value='' disabled>{{selectedVendor.number}}</option>
+				</select>
+			</div>
 		</div>
-		<div class="form-group">
-			<label>expense_accode</label>
-			<input type="text" id="created" class="form-control" placeholder="expense_accode" ng-model="formData.expense_accode">
+
+		<div class="form-group col-lg-6">
+			<label>Vendor Account Name</label>
+			<div>
+				<input type="text" class="form-control" ng-model="selectedVendor.name" disabled>
+			</div>
+		</div>		
+
+		<div class="form-group col-lg-6">
+			<label>Invoice Number</label>
+			<input input type="text" id="invoice_no" class="form-control" placeholder="Enter invoice_no Here" ng-model="formData.invoice_no">
 		</div>
-		<div class="form-group">
-			<label>desc</label>
-			<input type="text" id="created" class="form-control" placeholder="desc" ng-model="formData.desc">
+
+		<div class="form-group col-lg-6">
+			<label>Invoice Date</label>
+			<input input type="text" id="invoice_date" class="form-control" placeholder="Enter invoice_date Here" ng-model="formData.invoice_date">
 		</div>
-		<div class="form-group">
+
+		<div class="form-group col-lg-6">
+			<label>Expense A/C Code</label>
+			<div>
+				<select ng-model="selectedAccode" name="expense_accode" id="expense_accode" class="form-control" ng-options="expense.accode for expense in expenses" required>
+					<option value='' disabled>{{selectedAccode.accode}}</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="form-group col-lg-6">
+			<label>Description</label>
+			<div>
+				<input type="text" class="form-control" ng-model="selectedAccode.desc" disabled>
+			</div>
+		</div>		
+
+		<div class="form-group col-lg-12">
+			<label>Additional Description</label>
+			<textarea class="form-control" id="adddesc" rows="5" placeholder="Enter Additional Description Here" ng-model="formData.adddesc"></textarea>
+		</div>
+
+		<div class="form-group col-lg-4">
 			<label>cost</label>
-			<input type="text" id="created" class="form-control" placeholder="cost" ng-model="formData.cost">
+			<input input type="number" name="cost" id="cost" class="form-control" placeholder="Enter cost Here" ng-model="formData.cost" required>
+			<span class="text-warning" ng-show="createForm.cost.$error.required">This field is required!</span>
+			<span class="text-warning" ng-show="createForm.cost.$error.number">Invalid number</span>
 		</div>
-		<div class="form-group">
-			<label>billing</label>
-			<input type="text" id="created" class="form-control" placeholder="billing" ng-model="formData.billing">
+
+		<div class="form-group col-lg-4">
+			<label>Gst: </label>
+		    <label class="radio-inline">
+				<input type="radio" id="gst" name="gst" value="yes" ng-model="formData.gst" ng-required="!formData.gst"> Yes
+			</label>
+			<label class="radio-inline">
+  				<input type="radio" id="gst" name="gst" value="no" ng-model="formData.gst" ng-required="!formData.gst"> No
+			</label>
+			<span class="text-warning" ng-show="createForm.gst.$error.required">This field is required!</span>
 		</div>
-		<div class="form-group">
-		    <label> gst yes</label>
-		    <input type="radio" id="gst" name="gst" value="yes" ng-model="formData.gst" />
-		    <label> gst no </label>
-		    <input type="radio" id="gst" name="gst" value="no" ng-model="formData.gst" />
+
+		<div class="form-group col-lg-4">
+			<label>GST Percentage</label>
+			<input input type="number" name="gst_percentage" id="gst_percentage" class="form-control" placeholder="Enter gst_percentage Here" ng-model="formData.gst_percentage">
+			<span class="text-warning" ng-show="createForm.gst_percentage.$error.number">Invalid number</span>
 		</div>
-		<div class="form-group">
-			<label>gst_percentage</label>
-			<input type="text" id="created" class="form-control" placeholder="gst_percentage" ng-model="formData.gst_percentage">
+
+		<div class="form-group col-lg-12">
+			<label>Remarks</label>
+			<textarea class="form-control" id="remarks" rows="2" placeholder="Enter remarks Here" ng-model="formData.remarks"></textarea>
 		</div>
-		<div class="form-group">
-			<label>remarks</label>
-			<input type="text" id="created" class="form-control" placeholder="remarks" ng-model="formData.remarks">
+
+		<div class="form-group col-lg-12">
+			<button type="submit" class="btn btn-primary btn-large">Update</button>
 		</div>
-		<div class="form-group">
-			<label>vessel_name</label>
-			<input type="text" id="created" class="form-control" placeholder="vessel_name" ng-model="formData.vessel_name">
-		</div>
-		<div class="form-group">
-			<label>vessel_number</label>
-			<input type="text" id="created" class="form-control" placeholder="vessel_number" ng-model="formData.vessel_number">
-		</div>
-		<div class="form-group">
-			<label>customer_number</label>
-			<input type="text" id="created" class="form-control" placeholder="customer_number" ng-model="formData.customer_number">
-		</div>
-		<div class="form-group">
-			<label>customer_name</label>
-			<input type="text" id="created" class="form-control" placeholder="customer_name" ng-model="formData.customer_name">
-		</div>
-		<div class="form-group">
-			<label>drcr_number</label>
-			<input type="text" id="created" class="form-control" placeholder="drcr_number" ng-model="formData.drcr_number">
-		</div>
-		<div class="form-group">
-			<label>hide</label>
-			<input type="text" id="created" class="form-control" placeholder="hide" ng-model="formData.hide">
-		</div>
-		<div class="form-group">
-			<label>generated</label>
-			<input type="text" id="created" class="form-control" placeholder="generated" ng-model="formData.generated">
-		</div>
-		<div class="form-group">
-			<label>status</label>
-			<input type="text" id="created" class="form-control" placeholder="status" ng-model="formData.status">
-		</div>
-		<button type="submit" class="btn btn-primary" ng-click="submit()">Add</button>
 	</form>
+
+
+
+
+
+
 </div>
 <footer class="footer">
   <div class="container">

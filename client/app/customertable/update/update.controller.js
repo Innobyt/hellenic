@@ -4,29 +4,32 @@
 	angular.module('hellenicApp')
 	  .controller('customertableUpdateCtrl', customertableUpdateCtrl);
 	
-	customertableUpdateCtrl.$inject=['$scope', '$stateParams', 'customertable'];
+	customertableUpdateCtrl.$inject=['$scope', '$stateParams', '$state', 'customertable'];
 
-	function customertableUpdateCtrl($scope, $stateParams, customertable) {
-
-		// get a customertable object from the factory
-		$scope.vessel = customertable.query({ id: $stateParams.id }, function(){
-			$scope.number = $scope.vessel.number;
-		});
+	function customertableUpdateCtrl($scope, $stateParams, $state, customertable) {
 
 		// initialize update controller
 		$scope.initialize = function(){
-			// create new instance of customertable
-			$scope.formData = new customertable();
+			// query customertable
+			customertable.query({
+				id: $stateParams.id
+			}).$promise.then(
+				function(response) {
+					$scope.formData = response;
+				});
 		};
 
 		$scope.submit = function() {
 			// perform CRUD operations update
-			$scope.formData.$update({ id: $stateParams.id }, function(){ 
-				$scope.initialize(); 
+			$scope.formData.$update({
+				id: $stateParams.id
+			}, function() {
+				$state.go('list_customertable');
 			});
 		};
-
 		$scope.initialize();
 	}
 })();
+
+
 
