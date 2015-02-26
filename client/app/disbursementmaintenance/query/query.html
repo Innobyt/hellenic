@@ -31,7 +31,7 @@
 	<p>generated		: {{disbursementmaintenance.generated}}</p>
 	<p>status			: {{disbursementmaintenance.status}}</p>
 	<a class="btn btn-primary" href="/disbursement_maintenance/update/{{disbursementmaintenance._id}}">Update</a>
-	<a class="btn btn-danger" ng-click="deleteEntry()">Delete</a>
+	<a ng-show="isAdmin()" class="btn btn-danger" ng-click="deleteEntry()">Delete</a>
 </div>
 
 <footer class="footer">
